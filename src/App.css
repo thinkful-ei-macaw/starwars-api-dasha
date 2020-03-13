@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+body {
+  background-image: url("/images/marcin-jakubczak-star-destroyers-star-wars-zerosu-metallium-1274267.jpg");
+  background-size: 100%;
+}
+h1 {
+  display: none;
+}
+img#logo {
+  width: 5in;
+}
+
+p {
+  color: lightgoldenrodyellow;
+}
