@@ -1,0 +1,42 @@
+body {
+  font-family: "Poller One", cursive;
+}
+
+form {
+  background-color: lightyellow;
+  opacity: 0.5;
+  margin-left: 150px;
+  margin-right: 150px;
+
+  align-items: center;
+  text-align: center;
+}
+
+input {
+  width: 4in;
+  height: 50px;
+  margin: 20px;
+}
+
+label {
+  text-align: center;
+  margin: 50px;
+  padding-top: 20px;
+}
+
+button {
+  padding: 10px;
+  border: 3px solid black;
+  box-sizing: border-box;
+  color: lightcoral;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  height: 38px;
+  letter-spacing: 0.05rem;
+  line-height: 34px;
+  padding: 0 26px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
