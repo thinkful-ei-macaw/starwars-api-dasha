@@ -1,37 +1,25 @@
 import React from "react";
 import "./App.css";
 import SearchForm from "./SearchForm";
-import Name from "./Name";
+import Character from "./Character";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      names: []
+      characters: []
     };
-  }
-
-  componentDidMount() {
-    fetch("https://swapi.co/api/people/1/")
-      .then(response => response.json())
-      .then(response => this.setState({ names: response }));
   }
 
   createName = e => {
     e.preventDefault();
-    let newName = { title: e.target.title.value };
-    this.setState(
-      {
-        names: [...this.state.names, newName]
-      },
-      () => {
-        fetch("https://swapi.co/api/people/1/", {
-          method: "post",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newName)
-        }).then(response => response.json());
-      }
-    );
+    let search = e.target.search.value;
+    
+    fetch(`https://swapi.co/api/people/?search=${search}`, {
+      headers: { "Content-Type": "application/json" }
+    }).then(response => response.json())
+    .then(res=>this.setState({characters:res.results}));
+     
   };
 
   render() {
@@ -46,12 +34,12 @@ class App extends React.Component {
           />
           <SearchForm createName={this.createName} />
           <p>I dont know anything about StarWars</p>
-          {/* <section className="names">
-            {this.state.names.map((name, index) => (
-              <Name key={index} index={index} name={name} />
+           <section className="names">
+            {this.state.characters.map((character, index) => (
+              <Character key={index} index={index} character={character} />
             ))}
-          </section> */}
-          <Name />
+          </section> 
+          
         </header>
       </div>
     );

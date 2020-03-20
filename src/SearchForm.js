@@ -9,13 +9,13 @@ class SearchForm extends React.Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.props.createName}>
         <label for="title">Search for StarWars Name</label>
         <br />
         <input
           placeholder="enter Star Wars... last name??"
           type="text"
-          name="content"
+          name="search"
           id=""
         ></input>
         <br />
